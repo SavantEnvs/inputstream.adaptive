@@ -1,0 +1,10 @@
+project: savantenvs/inputstream.adaptive
+target: webm_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/webm_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/build/bin/webm_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/lib/webm_parser/fuzzing/webm.dict
+    timeout: 5
