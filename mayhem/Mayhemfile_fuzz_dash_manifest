@@ -1,0 +1,10 @@
+project: savantenvs/inputstream.adaptive
+target: fuzz_dash_manifest
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_dash_manifest/testsuite
+cmds:
+  - cmd: /mayhem/build/bin/fuzz_dash_manifest
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_dash_manifest/fuzz_dash_manifest.dict
+    timeout: 5
