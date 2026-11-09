@@ -1,0 +1,9 @@
+project: savantenvs/inputstream.adaptive
+target: fuzz_ts_demux-mined-4c1a0e1
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ts_demux-mined-4c1a0e1/testsuite
+cmds:
+  - cmd: /mayhem/build/bin/fuzz_ts_demux
+    libfuzzer: true
+    timeout: 5
